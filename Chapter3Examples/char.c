@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 int main(void) {
-	char letter0 = ;
+	char letter0 = 'B';
 	// char letter1 = B;   // B may be a variable
 	// char letter2 = "B";  // "B" is a character string
-	char letter3 = ;
+	char letter3 = 66;
 
 	printf("The ASCII number of letter %c is %d.\n", letter0, letter0);
 	printf("The ASCII number of letter %c is %d.\n", letter3, letter3);
