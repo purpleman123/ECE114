@@ -3,6 +3,8 @@
 #include <stdio.h>
 
 int main()
+// need to create 2 float variables to store decimals, then two print functions to allow the input of these two resistor values
+// final output to three decimal places using %.3lf using given formulas
 {
 float x,y;
     printf("Enter resistor value #1: ");

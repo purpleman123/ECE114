@@ -3,6 +3,8 @@
 #include <stdio.h>
 
 int main()
+// need 4 double variables, one for tempurature the other for outputs of math equations 
+// print fahrenheit input function, then preform math in background to simplify final output function
 {
 double x,y,z,a; //x is fahrenheit, y is celsius, z is speed in meters per second, a is speed in feet per second
    printf("*** Speed of Sound Calculator ***\nEnter a temperature in Fahrenheit: ");
