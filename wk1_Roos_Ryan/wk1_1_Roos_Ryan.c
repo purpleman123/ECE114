@@ -1,3 +1,5 @@
+// Ryan Roos Workshop 1.1
+// ECE 114 9/3/21
 #include <stdio.h>
 
 int main(){

@@ -1,8 +1,9 @@
 #include <stdio.h>
 int main()
 {
-    int num; // num is a variable name 
+    double x; // num is a variable name 
     // the data type of num is an integer.
-    printf("My favorite number is %d. \n", num);
+    scanf("%lf", &x);
+    printf("My favorite number is %lf. \n", x);
 return 0;
 }
