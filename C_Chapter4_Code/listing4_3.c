@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <string.h> // provides strlen() prototype
 #define PRAISE "You are an extraordinary being!"
-// #define TAX 0.08
+#define TAX 0.08
 
 int main(void)
 {
     char name[40]; // the array is 40.
-    //const float tax = 0.08;
+    const float tax = 0.08;
     
     printf("What's your name? ");
     scanf("%s", name);

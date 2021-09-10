@@ -3,7 +3,6 @@
 
 int main(void)
 {
-	setbuf(stdout, NULL);
     int m, n;
     printf("Input two integers m, n: ");
     /*
