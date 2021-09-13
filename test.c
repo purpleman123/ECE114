@@ -4,8 +4,11 @@
 int main()
 {
     double f, n;
-    n=1;
-    f=((pow(-1, n))/((2*n)+1));
+    scanf("%lf", &f);
+    while (n<f)
+    {
+        printf("hello");
+        n++;
+    }
 
-    printf("%0.20lf", f);
 }
