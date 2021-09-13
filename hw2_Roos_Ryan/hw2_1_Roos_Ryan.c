@@ -3,15 +3,19 @@
 // pi approximation program
 int main()
 {
-    long double f,x,n,z;
-    n=0.000000;
-    f=0;
-    x=1000000;
-    z=-1;
-while(n < x+1){
-    f= f+((z^n)/((2*n)+1));
-    ++n;
-}
-printf("%ld", f);
+    long double n, f, r, i;
+    ;
+    n=0;
+    printf("How many iterations would you like to find of PI? ");
+    scanf("%0.20lf", i);
+
+    while (n<i)
+    {
+        f=((pow(-1, n))/((2*n)+1))+f;
+        n++;
+    }
+
+r=f*4;
+printf("Final Approximation: %0.20lf", r);
 return 0;
 }
