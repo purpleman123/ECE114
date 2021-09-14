@@ -3,20 +3,20 @@
 // pi approximation program
 int main()
 {
-    double n, f, r, i;
+    double n, final, sum;
     n=0;
-    f=0;
-    i=0;
+    sum=0;
+    long i=0;
     printf("How many iterations would you like to find of PI? ");
-    scanf("%0.20lf", i);
+    scanf("%ld", &i);
 
     while(n<i+1)
     {
     
-        f=((pow(-1, n))/((2*n)+1))+f;    
+        sum=((pow(-1, n))/((2*n)+1))+sum;    
         ++n; 
     }
- r=4*f;   
-printf("%0.20lf", r);
+ final=4*sum;   
+printf("%0.20Lf", final);
 return 0;
 }
