@@ -9,11 +9,12 @@ int main(void)
     int row;
     char ch;
     // complete the following nested for loops.
-    for()
+    for(int row = 0; row < ROWS; row++)
     {
-        for(){
-            
+        for(char ch = 'A'; ch < 'A' + CHARS ; ch++ ){
+        printf("%c", ch);    
         }
+    printf("\n");
     }
 
     return 0;
