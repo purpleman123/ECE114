@@ -7,9 +7,12 @@ int main(void)
 {
     char ch;
     
-    while()
+    while((ch = getchar()) != '\n')
     {
-
+    if ( 'a' <= ch <= 'z')
+        putchar(ch + diff);
+    else
+        putchar(ch);
     }
     // print the newline
 

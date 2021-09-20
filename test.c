@@ -3,6 +3,9 @@
 
 int main()
 {
-printf("%d", 20 % 2);
+int x,y;
+  x=10;
+  y=4;
+printf("%d", x==y);
   return 0;
 }
