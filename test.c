@@ -4,8 +4,7 @@
 int main()
 {
 int x,y;
-  x=10;
-  y=4;
-printf("%d", x==y);
+print("this needs to print");
+scanf("%f")
   return 0;
 }
