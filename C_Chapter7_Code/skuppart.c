@@ -16,16 +16,16 @@ int main(void)
     printf("Enter the first score (q to quit): ");
     while (scanf("%f", &score) == 1)
     {
-        if (        )       // score is less than MIN or score is great than MAX
+        if (score<MIN || score>MAX)       // score is less than MIN or score is great than MAX
         {
-            printf("%.1f is an invalid value. Try again: ",
-                   score);
-                            // complete this statement
+            printf("%.1f is an invalid value. Try again: ", score);
+            scanf("%f", &score);
+            continue;
         }
         printf("Accepting %.1f\n", score);
         // How to update min and max?
-        min =
-        max =
+        min = score < min ? score : min;
+        max = score > max ? score : max;
         total += score;
         n++;
         printf("Enter next score (q to quit): ");
