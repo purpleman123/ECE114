@@ -11,7 +11,7 @@ int main(void)
     puts("with an n if it is wrong.");
     printf("Uh...is your number %d?\n", guess);
     // Complete the while loop
-    while (       )   // get response, compare to y
+    while (getchar() != y )   // get response, compare to y
     {
         printf("Well, then, is it %d?\n", ++guess);
     }
