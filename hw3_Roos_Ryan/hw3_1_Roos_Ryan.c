@@ -2,7 +2,9 @@
 //HW3 Question 1 9/23/21
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
+#include <string.h> //NOTE: I am aware that we havent done character strings and string.h functions in class yet but I know these from reading ahead in parts of the textbook and figured I could use them here. I hope this is ok!
+
+//This program allows a user to input the scale length of a guitar and the desired number of frets, then it will output a nicely formatted table with all the information needed to construct the fret distancing correctly
 
 int main(){
     int fretnum, fretcounter; // creation of ints used to store the desired number of frets along with a counter variable for the while loop

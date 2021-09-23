@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+// This program generates 4 random numbers and then has the user guess them. With each guess the user is told if their digit is right, if it is right but in the wrong spot or not found in the answer
+
 int main(){
     int digit1, digit2, digit3, digit4; // ints for the user entered digits
     int random1, random2, random3, random4; // these are used to store the randomly generated digits that are assigned at the start of the program
