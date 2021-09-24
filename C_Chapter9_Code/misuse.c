@@ -1,6 +1,6 @@
 // Listing 9.4 misuse.c: uses a function incorrectly
 #include <stdio.h>
-int imax(); // old-style declaration
+int imax(int n, int m); // old-style declaration
 
 int main(void)
 {

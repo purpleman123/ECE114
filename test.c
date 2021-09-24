@@ -4,7 +4,6 @@
 
 int main()
 {
-char note[3] = "A#";
-printf("%d", strcmp(note,"A#"));
+fflush(stdin);
   return 0;
 }
