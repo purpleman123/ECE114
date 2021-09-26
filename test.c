@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
 
-int main()
-{
-fflush(stdin);
-  return 0;
+int main(){
+
+char word1;
+scanf("%c", word1);
+printf("%c", );
+ 
+
 }
