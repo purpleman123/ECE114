@@ -3,8 +3,7 @@
 #include <stdio.h>
 
 int main(){
-int keep;
-keep = 3;
-printf("%d", keep--);
+int i_am = 1;
+printf("%d", i_am );
 return 0;
 }
