@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    int no_data[SIZE]; // uninitialized array
+    int no_data[SIZE] = {0}; // uninitialized array
     no_data[1] = 0;
     int i;
 
