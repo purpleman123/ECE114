@@ -10,6 +10,11 @@ int main(void)
     for (i = 0; i < 5; i++)
         printf("arr[%d] == %d\n", i, arr[i]);
     // 4 alternative ways using pointer arithmatic or array notation:
-
+    do{
+        int i = 0;
+        printf("arr[%d] == %d\n", i, arr[i]);
+        i++;
+    } while (i<5);
+    
     return 0;
 }
