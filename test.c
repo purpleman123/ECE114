@@ -3,14 +3,10 @@
 #include <stdio.h>
 int main(){
 
-int input = 4;
-int output = 1;
+int * p1, * p2, *p3;
 
-    for (int i = 0; i <= input; i++)
-    {
-    output=(input-i)*output;
-    }
-
-printf("%d", output);
+p1 =p2 = data;
+p3 = moredata;
+printf(" *p1 = %d,  *p2")
 return 0;
 }
