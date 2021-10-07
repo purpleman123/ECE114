@@ -33,7 +33,8 @@ int main(void) {
     int player = 1;                     // 1 for player #1 and 2 for player #2
     
     // write your code here
-
+    matrix[0][0] = 2;
+    printBoard(matrix);
     return 0;
 }
 
