@@ -31,10 +31,46 @@ int main(void) {
     int numBoxFilled = 0;               // 0 ~ 9; 0 (empty); 9 (full)
     int row, column;                    // for row # and colunn #
     int player = 1;                     // 1 for player #1 and 2 for player #2
-    
+    int winner = 0, alreadyMarked = 0;                     // what checkWinner is saved to
     // write your code here
-    matrix[0][0] = 2;
+    printf("Welcome to Tic-Tac-Toe!\n");
+
+    while(numBoxFilled < NUM_BOXES && winner == 0){
+        printBoard(matrix);
+
+    do{
+        printf("Player %d, enter the coordinates you want to put your mark:\n", player);
+        printf("row:"); // add input val loops for making sure input is within 1-3
+        scanf("%d", &row);
+        printf("column:");
+        scanf("%d", &column);
+        if (matrix[row-1][column-1] == 1 || matrix[row-1][column-1] == 2){
+            printf("This box has been marked! Enter again.\n");
+            alreadyMarked = 1;   
+        }
+    } while (alreadyMarked == 1);
+
+        matrix[row-1][column-1] = player;
+        numBoxFilled++;
+        if(winner == 1){ // need to create check winner function to impliment here
+            break;
+        }
+
+        if(player == 1){
+            player = 2;
+        }
+        else{
+            player = 1;
+        }
+        
+    }
     printBoard(matrix);
+    if(winner == 0){
+        printf("Game Tied! Game Over.\n");
+    }
+    else{
+        printf("Player #%d wins! Game Over.\n");
+    }
     return 0;
 }
 
