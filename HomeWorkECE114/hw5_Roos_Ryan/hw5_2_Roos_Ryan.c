@@ -41,7 +41,10 @@ int main(void) {
 // return 0 => no winner
 // return 1 => get a winner
 int checkWinner(int matrix[ROWS][COLUMNS]) {
-    // implement this function
+    // iterate checking if each coloumn is same
+    // same but for rows
+    // then check 0,0 1,1 2,2... (increasing to max row),(increasing to max coluunmn)
+    // then check 0,MAX 1,MAX-1 (increasing to max row),(decreasing from max column)
 }
 
 /* no need to change this function */
