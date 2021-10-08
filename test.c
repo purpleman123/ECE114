@@ -1,12 +1,7 @@
-//Ryan Roos ECE 114 
-//HW4 Question 2 9/30/21
-#include <stdio.h>
-int main(){
-
-int * p1, * p2, *p3;
-
-p1 =p2 = data;
-p3 = moredata;
-printf(" *p1 = %d,  *p2")
-return 0;
+ while (counter<ROWS){
+    if( (matrix[i][counter] == matrix[i+1][counter] == matrix[i+2][counter]) && matrix[i][counter] != 0){
+        output = 1;
+        break;
+    }
+counter++;
 }
