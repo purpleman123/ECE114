@@ -69,10 +69,10 @@ void encrypt(char * text, int secret){
     int i = 0;
     while(text[i] != '\0' ){
         for( int k = 0; k < secret; k++ ){
-            if( text[i] >= 'a' && text[i] <= 'z'){
+            if( text[i] >= 'a' && text[i] < 'z'){
                 text[i] = text[i] + 1;
             }
-            if( text[i] >= 'A' && text[i] <= 'Z'){
+            if( text[i] >= 'A' && text[i] < 'Z'){
                 text[i] = text[i] + 1;
             }
             if( text[i] == 'z'){
@@ -94,10 +94,10 @@ void decrypt(char * text, int secret){
     int i = 0;
     while(text[i] != '\0' ){
         for( int k = 0; k < secret; k++ ){
-            if( text[i] >= 'a' && text[i] <= 'z'){
+            if( text[i] > 'a' && text[i] <= 'z'){
                 text[i] = text[i] - 1;
             }
-            if( text[i] >= 'A' && text[i] <= 'Z'){
+            if( text[i] > 'A' && text[i] <= 'Z'){
                 text[i] = text[i] - 1;
             }
             if( text[i] == 'a'){
