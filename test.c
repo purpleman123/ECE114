@@ -1,7 +1,10 @@
- while (counter<ROWS){
-    if( (matrix[i][counter] == matrix[i+1][counter] == matrix[i+2][counter]) && matrix[i][counter] != 0){
-        output = 1;
-        break;
-    }
-counter++;
+#include <stdio.h>
+
+int main(){
+    char array[100];
+    array[100] = "the name is ryan";
+    printf("%s", array);
+    array[1] = (int) array[10] + 1;
+    printf("%s", array);
+    return 0;
 }
