@@ -45,6 +45,8 @@ void fillDeck(Card * const wDeck, const char * wFace[],
 
     // loop through wDeck
     // add your code
+    // loop 1: 13 times, one for each face
+    // nested loop 2: 0=a 1,2,3,4,5,6,7,8,9,10,11=queen,12=king then go back until done
 
 }
 
