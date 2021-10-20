@@ -8,7 +8,7 @@ int main() {
                      // #1
                      // #2
     printf("The code for %c is %d.\n", ch, ch);
-                         // *** clear input buffer
+    while(getchar() != '\n'){}                     // *** clear input buffer
     printf("Please enter a character: ");
     // get another character
                      // #1

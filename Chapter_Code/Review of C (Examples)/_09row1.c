@@ -12,7 +12,7 @@ int main(void)
 
     for(row = 0; row < ROWS; row++)
     {
-          // complete the inner loop
+          p
     }
     /* print this:
     ABCDEFGHIJKL

@@ -8,8 +8,8 @@ int main(void)
 {
     int secret_code;
     int code_entered;
-                            // get a random seed
-                            // random number between 50 and 100
+    srand((unsigned)time(NULL));     // get a random seed
+    secret_code = rand() % 51 + 50; // random number between 50 and 100
     // clear the screen
     system("clear"); // on Mac (You don't need to remember this)
     // system("cls"); // on Windows
