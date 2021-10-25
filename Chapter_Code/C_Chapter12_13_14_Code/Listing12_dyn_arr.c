@@ -28,7 +28,7 @@ int main(void)
     while(getchar() != '\n') {} //clear the input buffer
     */
     //** complete dynamic memory allocation here
-    ptd =
+    ptd = (double * ) malloc(max * sizeof(double));
     if (ptd == NULL)
     {
         puts("Memory allocation failed. Goodbye.");
@@ -39,6 +39,10 @@ int main(void)
     puts("Enter the values (q to quit):");
     //** Write value to the dynamic array here.
     
+    while(scanf("%lf", ptd + 1) == 1 && i < max){
+        i++;
+    }
+
     printf("Here are your %d entries:\n", number = i);
     for(i = 0; i < number; i++)
     {
