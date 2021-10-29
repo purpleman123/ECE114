@@ -1,9 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main (void) {
-int x;
-scanf("%d", &x);
-printf("%d", x);
-    return 0;
+int main(){
+    for (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
+   do
+   {
+       /* code */
+   } while (/* condition */);
+    if (/* condition */)
+    {
+        /* code */
+    }
+    else
+    {
+        /* code */
+    }
+    
 }

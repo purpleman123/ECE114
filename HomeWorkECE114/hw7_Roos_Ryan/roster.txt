@@ -1,0 +1,12 @@
+025370	Stone		Emma
+523882	Hanks		Tom
+320129	Johansson	Scarlett
+201335	Washington	Denzel
+135032	Watson		Emma
+135602	Cooper		Bradley
+231567	Cruise		Tom
+582012	Foster		Jodie
+123456	Depp		Jonny
+999224	Streep		Meryl	
+652122	Pitt		Brad
+872319	Ronan		Saoirse
