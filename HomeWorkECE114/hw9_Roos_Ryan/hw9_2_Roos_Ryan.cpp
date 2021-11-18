@@ -8,7 +8,11 @@
  * Define a struct called PERSON:
  * Holds a person's information: name, address, and age.
  */
-
+struct PERSON{
+    std::string name;
+    std::string address;
+    int age;
+}
 
 /* Function declarations here*/
 /*
