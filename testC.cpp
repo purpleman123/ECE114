@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]){
-    string str = "three";
-
+    string str = "aaree";
+    cout << str.compare("aoo");
     return 0;
 }

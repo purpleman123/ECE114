@@ -1,8 +1,10 @@
+// Ryan Roos 11/18/21
+// hw9_1
 #include <iostream>
 #include <cstdlib>
 #include <vector>
-// still need to make it work right when rounds are greater then number of bulbs
-// need to add input validation for command line arguments
+// overall this program will take in a number of bulbs and number of rounds from the command line
+// then it will print out the results of flipping switches based on round number
 
 enum {FILENAME, NUMOFBULBS, NUMOFITEERATIONS, ARGCOUNT};
 
@@ -20,7 +22,7 @@ int main(int argc, char const *argv[]){
         exit(EXIT_FAILURE);
     }
     
-    if ( atoi(argv[NUMOFBULBS]) <= 0 && atoi(argv[NUMOFITEERATIONS]) > 0){
+    if ( atoi(argv[NUMOFBULBS]) <= 0 && atoi(argv[NUMOFITEERATIONS]) > 0){  // these are the exit conditions if the arguments are not numbers
         std::cout << "The number of bulbs has to be a positive integer.\n";
         exit(EXIT_FAILURE);
     }
@@ -38,7 +40,7 @@ int main(int argc, char const *argv[]){
     numOfIterations = std::stoi(argv[NUMOFITEERATIONS], nullptr, 10);
 
     
-    if (numOfBulbs <= 0 && numOfIterations > 0){
+    if (numOfBulbs <= 0 && numOfIterations > 0){  // these are the exit conditions if the arguments are equal to or less then zero
         std::cout << "The number of bulbs has to be a positive integer.\n";
         exit(EXIT_FAILURE);
     }
@@ -56,8 +58,8 @@ int main(int argc, char const *argv[]){
     std::cout << "Number of Iterations: " << numOfIterations << "\n";
     std::vector <bool> lightbulbs(numOfBulbs, false);
 
-    for (int i = 0; i <= numOfIterations; i++){
-        if (i != 0){ 
+    for (int i = 0; i <= numOfIterations; i++){  // below is the loop for flipping the light bulbs
+        if (i != 0){                             // counter 1 is the overall counter, counter 2 is the one that gets reset when a light is switched and counter 3 resets when the end of the vector is reached
             while (counter1 != numOfBulbs){
                 if(counter2 == i || counter2 == (i % numOfBulbs) || (i % numOfBulbs) == 0){
                     // set the location marked by a third counter to its opposite
@@ -77,7 +79,7 @@ int main(int argc, char const *argv[]){
             counter3 = 0;
         }
 
-        std::cout << "Round " << i << ": [";
+        std::cout << "Round " << i << ": ["; // print out each round in the right format
         for (int k = 0; k < numOfBulbs; k++){
             if (lightbulbs[k] == 0){
                 std::cout << "off";
