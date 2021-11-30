@@ -10,7 +10,7 @@ int main(){
     std::string name;
     int monsterloss = 0;
     int goldnum = 0;
-    int rand1, rand2, rand3;
+    int rand1, rand2, rand3, randmonster;
     std::cout << "***** WELCOME TO DUNGEON CRAWLER: AN ECE 114 GAME *****\n";
     while (menuVar == 'p' || menuVar == 'P'){
         std::cout << "Enter 'p, P' to play or 'q, Q' to quit the game.\n";
@@ -38,8 +38,6 @@ int main(){
                 std::cin >> direction;
                 fflush(stdin);
                 // INPUT VAL
-
-                // random free gold or monster
                 if ( direction == 'f'){
                     std::cout << name << " moves forward in the dugeon, in this next room you find ";
                 }
@@ -51,20 +49,37 @@ int main(){
                 }
                 rand1 = rand() % 2 + 1;
                 if (rand1 == 1){
-                    rand2 = rand() % 4 + 2; // may need to lower amount given
-                    std::cout << "free gold! Good choice " << name << " you have found " << rand2 << " coins!\n";
+                    rand2 = rand() % 3 + 1;
+                    if ( rand2 == 1){
+                        std::cout << "free gold! Good choice " << name << " you have found " << rand2 << " coin!\n";
+                    }
+                    else{
+                        std::cout << "free gold! Good choice " << name << " you have found " << rand2 << " coins!\n";
+                    }
                     goldnum = goldnum + rand2;
+                    usleep(1000000);
+                    std::cout << "You are one step closer to escaping The Duegon...";
+                    usleep(1000000);
                 }
                 if (rand1 == 2){
                     rand3 = rand() % 3 + 1;
-                    std::cout << rand3;
+                    if (rand3 == 1){
+                        // 1 to 10
+                        // print out monster picture
+                        // take user input
+                        // INPUT VAL
+                        // tell if win and reward based on diffcuilty 
+                        // same for other 2 
+                    }
+                    if (rand3 == 2){
+                        // 1 to 5
+                    }
+                    if (rand3 == 3){
+                        // 1 or 2
+                    }  
                 }
-                // bring up monster picture and allow input to see if win or lose, then award gold
 
-                // read out outcome of turn and repeat
-                usleep(1000000);
-                std::cout << "You are one step closer to escaping The Duegon...";
-                usleep(1000000);
+                std::cout << "\nGold: " << goldnum << "\nLives: " << 3-monsterloss;
             }
             // if monsterloss is 3 read out how you died in the duegon and return to menu
 
