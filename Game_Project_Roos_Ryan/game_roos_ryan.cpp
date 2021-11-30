@@ -10,10 +10,10 @@ int main(){
     std::string name;
     int monsterloss = 0;
     int goldnum = 0;
-    int rand1, rand2, rand3, randmonster;
-    std::cout << "***** WELCOME TO DUNGEON CRAWLER: AN ECE 114 GAME *****\n";
+    int rand1, rand2, rand3, randmonster, monsterguess;
+    std::cout << "***** WELCOME TO DUNGEON CRAWLER: AN ECE 114 GAME *****";
     while (menuVar == 'p'){
-        std::cout << "Enter 'p' to play or 'q' to quit the game.\n";
+        std::cout << "\nEnter 'p' to play or 'q' to quit the game.\n";
         std::cin >> menuVar;
         fflush(stdin);
         while (menuVar != 'p' && menuVar != 'q'){
@@ -34,7 +34,7 @@ int main(){
             usleep(3000000);
             std::cout << "Once your next move is made there is either free gold or you must battle a monster.\n";
             usleep(3000000);
-            std::cout << name << " you will now be entering The Dungeon. . .\n====================================================================================";
+            std::cout << name << " you will now be entering The Dungeon. . .\n==================================================================================================";
             while (monsterloss < 3 && goldnum < 10){
                 srand(time(NULL));
                 std::cout << "\nChoose which path forward you wish to take, enter 'f' for forward, 'r' for right, and 'l' for left:\n";
@@ -65,34 +65,142 @@ int main(){
                     }
                     goldnum = goldnum + rand2;
                     usleep(1000000);
+                    std::cout << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@*........#@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@........@@@@@@@@@%.......@@@@@@@@\n@@@@@@@@@@@@@@&...@@@@@@@@@@@@@@@@@@@@@@@@...@@@@@\n@@@@@@@@@@@@@@..@@@@@@@@@@@@@@@@@@@@@@@@@@@*..@@@@\n@@@@@@@@@@@@@@....@@@@@@@@@@@@@@@@@@@@@@@@....@@@@\n@@@@@@@@(.......@........@@@@@@@@@&.......@...@@@@\n@@@@@@...@@@@@@....%@@@@@........./@@@@@.....@@@@@\n@@@@@..(@@@@@@@@@@@.....................&@@@@@@@@@\n@@@@@....@@@@@@@@@@@@@@@@@@@@@@@@....@@@@@@@@@@@@@\n@@@@@..,@.......,@@@@@@@@*......./@...@@@@@@@@@@@@\n@@@@@@.....@@@@@@,.......@@@@@@.....@...&@@@@@@@@@\n@@@@@@@@@......................%@@@@@@&..@@@@@@@@@\n@@@@@@@@@....*@@@@@@@@@@@@@@@@@@@@@@.....@@@@@@@@@\n@@@@@@@@@..&@..........%@@%..........@...@@@@@@@@@\n@@@@@@@@@@,....@@@@@@@@&%%@@@@@@@@.....@@@@@@@@@@@\n@@@@@@@@@@@@@@@...................,@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
+                    usleep(1000000);
                     std::cout << "You are one step closer to escaping The Duegon...";
                     usleep(1000000);
                 }
                 if (rand1 == 2){
                     rand3 = rand() % 3 + 1;
                     if (rand3 == 1){
-                        // 1 to 10
+                        randmonster = rand() % 5 + 1;
                         // print out monster picture
-                        // take user input
-                        // INPUT VAL
-                        // tell if win and reward based on diffcuilty 
-                        // same for other 2 
+                        std::cout << "a gemlin! You must input a number between 1 and 5.\n";
+                        usleep(1000000); // HERE IS WHERE THE FUNCTION NEEDS TO GO
+                        std::cout << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@       @@@@@@@@@@@@@@@@@@@@@@@@@@%       @@@@\n@@@@@   @#     &@@@@@@@%   @@@@@@@@(     &&   @@@@\n@@@@@   &@@@@    @@            #@@   *@@@@&   @@@@\n@@@@@   @@@@@                        *@@@@&   @@@@\n@@@@@%    @    @@@@@@@@@@@@@@@@@@@@&   @&    @@@@@\n@@@@@@@   @(   &@@@@@@@@@@@@@@@@@@@#   @@   @@@@@@\n@@@@@@@   &        @@@@@@@@@@@@@       .@   @@@@@@\n@@@@@@@@     @@@@       @@@       @@@&     @@@@@@@\n@@@@@@@@     @@@@@&   %@@@@&*  .&@@@@@    @@@@@@@@\n@@@@@@@@@@    @@@@@@@@  @@@ #@@@@@@@@   %@@@@@@@@@\n@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@&   (@@@@@@@@@@\n@@@@@@@@@@@@&   @@& @  %  *, .( @@/   @@@@@@@@@@@@\n@@@@@@@@@@@@@@    @@@*       %@@&   *@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@     @@@@@@&@@    *&@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@             @@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@(. ,#@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
+                        usleep(1000000);
+                        std::cout << "If your number matches the gremlin you lose one monster life, if your number does not match you win 2 gold!\nInput here: ";
+                        std::cin >> monsterguess;
+                        fflush(stdin);
+                        while (monsterguess < 1 || monsterguess > 10){
+                            std::cout << "Wrong input! Make sure it is between 1 and 5.\nInput here: ";
+                            std::cin >> monsterguess;
+                            fflush(stdin);
+                        }
+                        if (randmonster == monsterguess){
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Oh no! Your number matches the gremlin, you have lost one 1 life!";
+                            usleep(1000000);
+                            monsterloss++;
+                        }
+                        else{
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Yay! You have won 2 gold for beating the gremlin.";
+                            usleep(1000000);
+                            goldnum = goldnum + 2;
+                        } 
                     }
                     if (rand3 == 2){
                         // 1 to 5
+                        randmonster = rand() % 3 + 1;
+                        // print out monster picture
+                        std::cout << "a demon! You must input a number between 1 and 3.\n";
+                        usleep(1000000); // FUNCTION HERE
+                        std::cout << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@&   *@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@     @@@@@@@@@@        @@@@@@@@@@@@@\n@@@@@@@@@@@  &@@@@@@@@@@@@@@@@@@@@@@@@&   @@@@@@@@\n@@@@@@@@/  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  @@@@@\n@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  @@@\n@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@\n@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@& @\n@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @\n@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  @\n@@  @     .@@@@@@        @@@@@@@@@@@@@@@@@@@@@@  @\n@@ @         @@@             @@@@@@@@@@@@@@@@@  @@\n@@ @        @@@@@              @@@@@@@@@@@@@@@  @@\n@@ %@     @@@@@@@@             @@@@@@@@@@@@@@  @@@\n@@@ @@@@@@@    @@@@@          @@@@@@@@@@@@@@  @@@@\n@@@ @@@@@@       @@@@@@@@@@@@@@@@@@@@   @%  @@@@@@\n@@@/    @@@  @@ &@@@@@@@@@@@@@    @      @@@@@@@@@\n@@@@@@  @@@@@@@@@@@@@@@@@@@@  &@@@   @@@@@@@@@@@@@\n@@@@@@# @@ @ @@@@@@@@@@  @  @@@@@  @@@@@@@@@@@@@@@\n@@@@@@@                  @@@@@@@. @@@@@@@@@@@@@@@@\n@@@@@@@ @ @@ @, @( @, @@@@@@@@@& &@@@@@@@@@@@@@@@@\n@@@@@@@ ,@@@@@@@@@@@@@@@@@@@@  ,@@@@@@@@@@@@@@@@@@\n@@@@@@@@  @@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@            @@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n";
+                        usleep(1000000);
+                        std::cout << "If your number matches the demon you lose one monster life, if your number does not match you win 3 gold!\nInput here: ";
+                        std::cin >> monsterguess;
+                        fflush(stdin);
+                        while (monsterguess < 1 || monsterguess > 5){
+                            std::cout << "Wrong input! Make sure it is between 1 and 3.\nInput here: ";
+                            std::cin >> monsterguess;
+                            fflush(stdin);
+                        }
+                        if (randmonster == monsterguess){
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Oh no! Your number matches the demon, you have lost one 1 life!";
+                            usleep(1000000);
+                            monsterloss++;
+                        }
+                        else{
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Yay! You have won 3 gold for beating the demon.";
+                            usleep(1000000);
+                            goldnum = goldnum + 3;
+                        } 
                     }
                     if (rand3 == 3){
-                        // 1 or 2
+                        randmonster = rand() % 2 + 1;
+                        // print out monster picture
+                        std::cout << "a Duegon Boss! You must input 1 or 2.\n";
+                        usleep(1000000);
+                        std::cout << "";
+                        usleep(1000000);
+                        std::cout << "If your number matches the Duegon Boss you lose one monster life, if your number does not match you win 4 gold!\nInput here: ";
+                        std::cin >> monsterguess;
+                        fflush(stdin);
+                        while (monsterguess < 1 || monsterguess > 2){
+                            std::cout << "Wrong input! Make sure it is 1 or 2.\nInput here: ";
+                            std::cin >> monsterguess;
+                            fflush(stdin);
+                        }
+                        if (randmonster == monsterguess){
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Oh no! Your number matches the Duegon Boss, you have lost one 1 life!";
+                            usleep(1000000);
+                            monsterloss++;
+                        }
+                        else{
+                            std::cout << ". . .";
+                            usleep(1000000);
+                            std::cout << " Yay! You have won 4 gold for beating the Duegon Boss.";
+                            usleep(1000000);
+                            goldnum = goldnum + 2;
+                        } 
                     }  
                 }
-
-                std::cout << "\nGold: " << goldnum << "\nLives: " << 3-monsterloss << "\n";
+                std::cout << "\nGold: " << goldnum << "\nLives: " << 3-monsterloss << "\n==================================================================================================";
             }
-            // if monsterloss is 3 read out how you died in the duegon and return to menu
-
-            // if goldnum is 10 or more explain how you are rich and escaped then return to menu
+            if (monsterloss == 3){
+                std::cout << "\nOH NO YOU LOST";
+            }
+            else{
+                std::cout << "\nYOU WON LETS GOO";
+            }
         }
+    monsterloss = 0;
+    goldnum = 0;
     }
     std::cout << "Thanks for playing!";
 return 0;
 }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@     @@@@@@@@@@@@@*  /@@@@@@@@@@@@@@
+@@@@@@@@@@@@         @@@@@@@@@         @@@@@@@@@@@
+@@@@@@@@@@&     @@@@@  @@@@@@    *  *  @@@@@@@@@@@
+@@@@@@@@@    @@@@@@@@@@  .@      __   @@@@@@@@@@@@
+@@@@@@@    ,@@@@@@@@@@@@@            @@@@@@@@@@@@@
+@@@@@@    @@@@@@@@@@@@@@@@           .@@@@@@@@@@@@
+@@@@@   @@@@@@@@@@@@@@@@@             @@@@@@@@@@@@
+@@@@   @@@@@@@@@@@@@@@@               @@@@@@@@@@@@
+@@@   @@@@@@@@@@@@@@@@@@              @@@@@@@@@@@@
+@@   @@@@@@@@@@@@@@@@@@@@@             @@@@@@@@@@@
+@@  @@@@@@@@@@@@@@@@@@@@@             #   @@@@@@@@
+@@ @@@@@@@@@@@@@@@@@@@@@@              @@   @@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@              @@@@@  @@@@
+@@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@  %@
+@@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@                ,@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@                 @@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@                  @@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
