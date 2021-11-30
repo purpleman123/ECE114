@@ -12,12 +12,16 @@ int main(){
     int goldnum = 0;
     int rand1, rand2, rand3, randmonster;
     std::cout << "***** WELCOME TO DUNGEON CRAWLER: AN ECE 114 GAME *****\n";
-    while (menuVar == 'p' || menuVar == 'P'){
-        std::cout << "Enter 'p, P' to play or 'q, Q' to quit the game.\n";
+    while (menuVar == 'p'){
+        std::cout << "Enter 'p' to play or 'q' to quit the game.\n";
         std::cin >> menuVar;
         fflush(stdin);
-        //INPUT VAL
-        if (menuVar == 'q' || menuVar == 'Q'){
+        while (menuVar != 'p' && menuVar != 'q'){
+            std::cout << "Wrong input! Make sure it is p or q:\n";
+            std::cin >> menuVar;
+            fflush(stdin);
+        }
+        if (menuVar == 'q'){
             break;
         }
         else{
@@ -33,18 +37,21 @@ int main(){
             std::cout << name << " you will now be entering The Dungeon. . .\n====================================================================================";
             while (monsterloss < 3 && goldnum < 10){
                 srand(time(NULL));
-                // direction choose
-                std::cout << "\nChoose which path forward you wish to take, enter 'f' for forward, 'r' for right, and 'l' for left.\n";
+                std::cout << "\nChoose which path forward you wish to take, enter 'f' for forward, 'r' for right, and 'l' for left:\n";
                 std::cin >> direction;
                 fflush(stdin);
-                // INPUT VAL
-                if ( direction == 'f'){
+                while (direction != 'f' && direction != 'r' && direction != 'l'){
+                    std::cout << "Wrong input! Make sure it is f, r or l:\n";
+                    std::cin >> direction;
+                    fflush(stdin);
+                }
+                if (direction == 'f'){
                     std::cout << name << " moves forward in the dugeon, in this next room you find ";
                 }
-                if ( direction == 'r'){
+                if (direction == 'r'){
                     std::cout << name << " moves right in the dugeon, in this next room you find ";
                 }
-                if ( direction == 'l'){
+                if (direction == 'l'){
                     std::cout << name << " moves left in the dugeon, in this next room you find ";
                 }
                 rand1 = rand() % 2 + 1;
@@ -79,7 +86,7 @@ int main(){
                     }  
                 }
 
-                std::cout << "\nGold: " << goldnum << "\nLives: " << 3-monsterloss;
+                std::cout << "\nGold: " << goldnum << "\nLives: " << 3-monsterloss << "\n";
             }
             // if monsterloss is 3 read out how you died in the duegon and return to menu
 
