@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include <time.h>
 
+// need to make print outs into functions, spell check!! and comment
+// game instructions
+// demo video
+// blog post
+
 int main(){
     char menuVar = 'p';
     char direction;
