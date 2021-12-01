@@ -2,8 +2,9 @@
 #include <cmath>
 using namespace std;
 
-int main(int argc, char const *argv[]){
-    string str = "aaree";
-    cout << str.compare("aoo");
+int main(){
+    int num;
+    cin >> num;
+    cout << num;
     return 0;
 }

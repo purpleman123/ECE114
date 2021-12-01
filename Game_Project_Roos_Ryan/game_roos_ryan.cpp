@@ -20,11 +20,15 @@ int main(){
     while (menuVar == 'p'){
         std::cout << "\nEnter 'p' to play or 'q' to quit the game.\n";
         std::cin >> menuVar;
-        fflush(stdin);
+        std::cin.clear();
+        while(std::cin.get() != '\n')
+            continue;
         while (menuVar != 'p' && menuVar != 'q'){
             std::cout << "Wrong input! Make sure it is p or q:\n";
             std::cin >> menuVar;
-            fflush(stdin);
+            std::cin.clear();
+            while(std::cin.get() != '\n')
+                continue;
         }
         if (menuVar == 'q'){
             break;
@@ -32,7 +36,7 @@ int main(){
         else{ // Player inputs name and the basic rules of the game are explained
             std::cout << "Enter your player name before we begin: ";
             std::getline(std::cin, name);
-            fflush(stdin);
+            std::cin.clear();
             std::cout << "\nHello " << name << " this is the beginning of a grand journey through a dark and scary dungeon.\n";
             usleep(3000000);
             std::cout << "At the start of each turn you will choose 1 of 3 directions to go.\n";
@@ -44,11 +48,15 @@ int main(){
                 srand(time(NULL));
                 std::cout << "\nChoose which path forward you wish to take, enter 'f' for forward, 'r' for right, and 'l' for left:\n"; // This is where the player chooses which direction to go
                 std::cin >> direction;
-                fflush(stdin);
+                std::cin.clear();
+                while(std::cin.get() != '\n')
+                    continue;
                 while (direction != 'f' && direction != 'r' && direction != 'l'){
                     std::cout << "Wrong input! Make sure it is f, r or l:\n";
                     std::cin >> direction;
-                    fflush(stdin);
+                    std::cin.clear();
+                    while(std::cin.get() != '\n')
+                        continue;
                 }
                 if (direction == 'f'){
                     std::cout << name << " moves forward in the dungeon, in this next room you find ";
@@ -85,11 +93,15 @@ int main(){
                         usleep(1000000);
                         std::cout << "If your number matches the gremlin you lose one monster life, if your number does not match you win 2 gold!\nInput here: ";
                         std::cin >> monsterguess;
-                        fflush(stdin);
-                        while (monsterguess < 1 || monsterguess > 10){
+                        std::cin.clear();
+                        while(std::cin.get() != '\n')
+                            continue;
+                        while (monsterguess < 1 || monsterguess > 5){
                             std::cout << "Wrong input! Make sure it is between 1 and 5.\nInput here: ";
                             std::cin >> monsterguess;
-                            fflush(stdin);
+                            std::cin.clear();
+                            while(std::cin.get() != '\n')
+                                continue;
                         }
                         if (randmonster == monsterguess){
                             std::cout << ". . .";
@@ -114,11 +126,15 @@ int main(){
                         usleep(1000000);
                         std::cout << "If your number matches the demon you lose one monster life, if your number does not match you win 3 gold!\nInput here: ";
                         std::cin >> monsterguess;
-                        fflush(stdin);
-                        while (monsterguess < 1 || monsterguess > 5){
+                        std::cin.clear();
+                        while(std::cin.get() != '\n')
+                            continue;
+                        while (monsterguess < 1 || monsterguess > 3){
                             std::cout << "Wrong input! Make sure it is between 1 and 3.\nInput here: ";
                             std::cin >> monsterguess;
-                            fflush(stdin);
+                            std::cin.clear();
+                            while(std::cin.get() != '\n')
+                                continue;
                         }
                         if (randmonster == monsterguess){
                             std::cout << ". . .";
@@ -143,11 +159,15 @@ int main(){
                         usleep(1000000);
                         std::cout << "If your number matches the Dungeon Boss you lose one monster life, if your number does not match you win 4 gold!\nInput here: ";
                         std::cin >> monsterguess;
-                        fflush(stdin);
+                        std::cin.clear();
+                        while(std::cin.get() != '\n')
+                            continue;
                         while (monsterguess < 1 || monsterguess > 2){
                             std::cout << "Wrong input! Make sure it is 1 or 2.\nInput here: ";
                             std::cin >> monsterguess;
-                            fflush(stdin);
+                            std::cin.clear();
+                            while(std::cin.get() != '\n')
+                                continue;
                         }
                         if (randmonster == monsterguess){
                             std::cout << ". . .";
